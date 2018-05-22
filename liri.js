@@ -21,17 +21,14 @@ inquirer.prompt([
         choices: ['my-tweets', 'spotify-this-song', 'movie-this', 'do-what-it-says']
     }
 ]).then(function(inquirerResponse) {
-    //  console.log('you chose ' + inquirerResponse.command);
     makeDecision(inquirerResponse.command);
-
 });
 
 function makeDecision(command) {
     switch (command) {
         case 'my-tweets':
             getTweets();
-            break;
-        
+            break;        
         case 'do-what-it-says':
             getRandom();
             break; 
@@ -46,7 +43,6 @@ function promptSearchTerm (command) {
             type: 'input',
             name: 'searchTerm',
             message: 'What do you want to search?'
-            
         }
     ]).then(function(inquirerResponse) {
         var searchTerm = inquirerResponse.searchTerm;
@@ -86,7 +82,6 @@ function getSpotify(songName) {
         if (error) {
           return console.log('Error occurred: ' + error);
         }
-       
         var songData = data.tracks.items[0];
         var song = {
             artists: songData.artists[0].name,
@@ -123,7 +118,6 @@ function getMovie(movieName) {
     });   
 }
 function getRandom () {
-
     fs.readFile('./random.txt', 'utf8', function(error, data) {
         if (error) {
             return console.log('Error occurred: ' + error);
@@ -135,8 +129,5 @@ function getRandom () {
 function log(data) {
     fs.appendFile('./log.txt', JSON.stringify(data) + '\n', function() {
         console.log('data was logged');
-
     });
 }
-
-
