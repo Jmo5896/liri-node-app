@@ -1,7 +1,7 @@
 # liri-node-app
         Liri-node-app is a command line based app I built 
     to help myself polish my node.js abilities.  Basically 
-    I give the user several options of what they wnat to do
+    I give the user several options of what they want to do
     and Liri does the rest.   
 
 # Getting Started:
