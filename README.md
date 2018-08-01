@@ -18,10 +18,11 @@
         TWITTER_CONSUMER_SECRET=your-twitter-consumer-secret
         TWITTER_ACCESS_TOKEN_KEY=your-access-token-key
         TWITTER_ACCESS_TOKEN_SECRET=your-twitter-access-token-secret
+
+    Below you'll find links for getting your own twitter and spotify keys
+[`Twitter`](https://apps.twitter.com/app/new) && [`Spotify`](https://beta.developer.spotify.com/dashboard/login)
     
-[`you will need to get these spotify and twitter keys yourself`](https://apps.twitter.com/app/new)
-[`and`](https://beta.developer.spotify.com/dashboard/login)
-    you will also need to put in your screen name on line 65 of liri.js
+    you will also need to put in your screen name on line 61 of liri.js
 
     NPM Installs:
         here's my list of npm packages used for this project:
@@ -35,22 +36,38 @@
 # How It works:
     * So after you clone the repo and get all your npm packages sorted go to your bash and run "node liri.js"
     
-    * This willl take you to a screen that looks like this: [`Pictures of Liri in action`](images/01-pic.png)
+    * This will take you to a screen that looks like this: 
+[`main menu`](images/01-pic.png)
+
     *We'll now walk through each option:
         1. My Tweets:
             *As long as built out your .env and got your api keys, when you select "my-tweets" you will recieve the
-            last 20 tweets you have posted [`my-tweets`](images/02-pic_my-tweets.png)
+            last 20 tweets you have posted 
+[`my-tweets`](images/02-pic_my-tweets.png)
+
         2. Spotify This Song:
-            *If you select "spotify-this-song", this screen will pop up: [`spotify-this-song opening menu`](images/03-pic_spotify-opening-menu.png) 
-            *If you hit enter without entering a song title this will happen [`spotify-this-song if you don't enter anything`](images/03-pic_spotify-this-song-blank.png)
+            *If you select "spotify-this-song", this screen will pop up:
+[`spotify-this-song opening menu`](images/03-pic_spotify-opening-menu.png) 
+
+            *If you hit enter without entering a song title this will happen 
+[`spotify-this-song if you don't enter anything`](images/03-pic_spotify-this-song-blank.png)
+
             *If you enter the title of a song, liri will fetch that information like so: 
-            [`spotify-this-song after entering a song title`](images/03-pic_spotify-this-song.png)
+ [`spotify-this-song after entering a song title`](images/03-pic_spotify-this-song.png)
+
         3. Movie This:
-            *When selected you'll get a menu like this: [`movie-this`](images/04-pic_movie-menu.png)
-            *If hit enter without entering a movie title, this will happen: [`movie-this if you don't enter anything`](images/04-pic_movie-this-blank.png)
-            *If you enter a movie title it will pull up information on the movie like so: [`movie-this`](images/04-pic_movie-this.png)
+            *When selected you'll get a menu like this: 
+[`movie-this`](images/04-pic_movie-menu.png)
+
+            *If hit enter without entering a movie title, this will happen: 
+[`movie-this if you don't enter anything`](images/04-pic_movie-this-blank.png)
+
+            *If you enter a movie title it will pull up information on the movie like so: 
+[`movie-this`](images/04-pic_movie-this.png)
+
         4. Do What It Says:
-            *When selected, this will pop up: [`do-what-it-says`](images/05-pic_do-what-it-says.png)
+            *When selected, this will pop up: 
+[`do-what-it-says`](images/05-pic_do-what-it-says.png)
 
 # Built With:
     Javascript
