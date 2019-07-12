@@ -21,17 +21,14 @@ inquirer.prompt([
         choices: ['my-tweets', 'spotify-this-song', 'movie-this', 'do-what-it-says']
     }
 ]).then(function(inquirerResponse) {
-    //  console.log('you chose ' + inquirerResponse.command);
     makeDecision(inquirerResponse.command);
-
 });
 
 function makeDecision(command) {
     switch (command) {
         case 'my-tweets':
             getTweets();
-            break;
-        
+            break;        
         case 'do-what-it-says':
             getRandom();
             break; 
@@ -46,7 +43,6 @@ function promptSearchTerm (command) {
             type: 'input',
             name: 'searchTerm',
             message: 'What do you want to search?'
-            
         }
     ]).then(function(inquirerResponse) {
         var searchTerm = inquirerResponse.searchTerm;
@@ -62,10 +58,9 @@ function promptSearchTerm (command) {
 }
 
 function getTweets () {
-    var params = {screen_name: 'Jmo5896'};
+    var params = {screen_name: 'SCREEN NAME GOES HERE'};//change to your screen name
     client.get('statuses/user_timeline', params, function(error, tweets, response) {
         if (!error) {
-            console.log(tweets[0]);
             var myTweets = [];
             for (var i = 0; i < tweets.length; i++) {
                 var myTweet = {
@@ -83,11 +78,10 @@ function getSpotify(songName) {
     if (songName === '' || !songName) {
         songName = 'The Sign Ace of Base';
     }
-    spotify.search({ type: 'track', query: songName }, function(err, data) {
-        if (err) {
-          return console.log('Error occurred: ' + err);
+    spotify.search({ type: 'track', query: songName }, function(error, data) {
+        if (error) {
+          return console.log('Error occurred: ' + error);
         }
-       
         var songData = data.tracks.items[0];
         var song = {
             artists: songData.artists[0].name,
@@ -104,6 +98,9 @@ function getMovie(movieName) {
         movieName = 'Mr. Nobody.';
     }
     request('http://www.omdbapi.com/?apikey=trilogy&t=' + movieName + '&y=&plot=full&tomatoes=true', function (error, response, body) {
+        if (error) {
+            return console.log('Error occurred: ' + error);
+        }
         var movieData = JSON.parse(body);
         var movie = {
             title: movieData.Title,
@@ -121,17 +118,16 @@ function getMovie(movieName) {
     });   
 }
 function getRandom () {
-
     fs.readFile('./random.txt', 'utf8', function(error, data) {
+        if (error) {
+            return console.log('Error occurred: ' + error);
+        }
         var randomArr = data.split(', ');
         getSpotify(randomArr[1]);
     });
 }
 function log(data) {
-    fs.appendFile('./log.txt', JSON.stringify(data) + '\n', function(err) {
+    fs.appendFile('./log.txt', JSON.stringify(data) + '\n', function() {
         console.log('data was logged');
-
     });
 }
-
-
